@@ -1,5 +1,7 @@
 $('#submit').on('click', function(evento) {
   evento.preventDefault()
+  
+
   var nome = $("#pk-name").val()
   var name = nome.toLowerCase()
   var url = `https://pokeapi.co/api/v2/pokemon/${name}`
@@ -19,6 +21,9 @@ $('#submit').on('click', function(evento) {
       
     },
 
+    error: function() {
+      alert("Pokemon não encontrado")
+    }
     
   })
 })
